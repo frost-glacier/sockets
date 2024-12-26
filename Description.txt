@@ -1,0 +1,13 @@
+Sockets implementation:
+
+Server.c
+  Server.c socket is used to collect logs on clients. Logs are stored in server_log.txt.
+  It opens a socket connection and waits for clients to connect.
+  After the client is connected it puts each connection into a separate thread with its own handler and collects logs about client connection
+
+Client.c
+  Connects to a server and keeps the connection open until it is terminated.
+
+
+server.c compilation: gcc -rthreads -o server_run server.c
+client.c compilation: gcc -o client_run client.c
